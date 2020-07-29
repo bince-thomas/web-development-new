@@ -1,0 +1,12 @@
+/* {}   */
+@media (max-width:581px) {.parent {
+    display: grid;
+    grid-template-columns: 1fr ;
+ 
+ }
+    
+ 
+ .child1 {
+    background-color: brown;
+ }
+

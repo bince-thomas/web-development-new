@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ul class="slider">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+    <script src="jQuery.v3.4.1.js"></script>
+    <script>
+      $(document).ready(function() {
+        //active first child
+        $(".slider li:first").addClass("active");
+
+        var change = function() {
+          //change class active
+          //console.log("hi");
+          var currentElement = $(".slider li.active");
+          var nextElement = currentElement.next();
+
+          //   nextElement.addClass("active");
+          //   currentElement.removeClass("active");
+          if (!nextElement.length) {
+            nextElement = $(".slider li:first");
+            nextElement.addClass("active");
+            currentElement.removeClass("active");
+          } else {
+            nextElement.addClass("active");
+            currentElement.removeClass("active");
+          }
+        };
+        setInterval(change, 3000);
+      });
+    </script>
+  </body>
+</html>
